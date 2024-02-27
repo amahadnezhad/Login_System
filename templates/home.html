@@ -3,16 +3,22 @@
 {% block page_title %}Home{% endblock page_title %}
 
 {% block content %}
-    <h1>HOME</h1>
-    {% if user.is_authenticated %}
 
-        <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            Welcome {{ user.username }} |
-            <button type="submit">logout</button>
-        </form>
 
-    {% else %}
-        <a href="{% url 'login' %}">login</a> | <a href="{% url 'signup' %}">signup</a>
-    {% endif %}
+    <div class="container mt-4">
+
+        <div class="col-3">
+            <div class="card my-4 bg-light">
+                <h5 class="card-header bg-success text-white">Hey There!</h5>
+                <div class="card-body">
+                    <p class="card-text ">This is Login System Using Django</p>
+                    <p>Have Fun!</p>
+                    <p>You Can Create An Account And Login!</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 {% endblock content %}

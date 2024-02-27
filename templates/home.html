@@ -5,8 +5,14 @@
 {% block content %}
     <h1>HOME</h1>
     {% if user.is_authenticated %}
-        <p>Welcome {{ user.username }} | <a href="{% url 'logout' %}">logout</a></p>
+
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            Welcome {{ user.username }} |
+            <button type="submit">logout</button>
+        </form>
+
     {% else %}
-        <a href="{% url 'login' %}">login</a> | signup
-    {% endif %} 
+        <a href="{% url 'login' %}">login</a> | <a href="{% url 'signup' %}">signup</a>
+    {% endif %}
 {% endblock content %}

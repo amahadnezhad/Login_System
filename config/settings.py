@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Third Party App
     'bootstrap5',
+    'crispy_forms',
 
     # Local Apps
     'accounts.apps.AccountsConfig',
